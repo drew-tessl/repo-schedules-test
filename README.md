@@ -34,7 +34,7 @@ its credentials.
 |---|---|
 | Tessl **Sync** GitHub App installed on this repo | The Agent App's pushes are ignored for schedules |
 | Schedules committed on the **default branch** | Pushes to other branches are ignored |
-| A workspace environment named `drew-repo-schedules` holding `GITHUB_TOKEN` (or `GH_TOKEN`) and `LINEAR_TOKEN` | A scheduled fire cannot mint its own GitHub token, so the environment is its only source. A token-less environment is skipped silently |
+| A workspace environment named `drew-test-env` holding `GITHUB_TOKEN` (or `GH_TOKEN`) and `LINEAR_TOKEN` | A scheduled fire cannot mint its own GitHub token, so the environment is its only source. A token-less environment is skipped silently |
 | `schedules-repo-flag` enabled | Off by default. The webhook is unauthenticated, so the flag evaluates against PostHog distinct id `unknown`, so a per-user enable has no effect |
 
 An entry whose environment, skill ref, agent/model, or inputs do not validate is

@@ -1,10 +1,10 @@
 {
-  "name": "tessleng/repo-schedules-test",
+  "name": "drew-test/repo-schedules-test",
   "schedules": {
     "launch-smoke-test": {
       "skill": "file:plugins/launch-smoke-test",
       "cron": "0 9 * * *",
-      "environment": "drew-repo-schedules",
+      "environment": "drew-test-env",
       "timezone": "Europe/London",
       "baseBranch": "main",
       "inputs": {
