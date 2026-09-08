@@ -54,3 +54,5 @@ must be lowercase kebab-case, and a cron may not fire more often than every
 `environment` names an environment; it is not an id. Ids are workspace-scoped
 and would resolve to nothing in a second workspace, so the file names the
 environment and the apply step resolves it per workspace.
+
+<!-- sync trigger -->
