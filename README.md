@@ -66,3 +66,5 @@ environment and the apply step resolves it per workspace.
 <!-- resync after full auth redo -->
 
 <!-- sync test after EXP-10209 flag removal -->
+
+<!-- sync retry, well clear of the rollout -->
