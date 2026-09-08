@@ -1,0 +1,17 @@
+{
+  "name": "tessleng/repo-schedules-test",
+  "schedules": {
+    "launch-smoke-test": {
+      "skill": "file:plugins/launch-smoke-test",
+      "cron": "0 9 * * *",
+      "environment": "drew-repo-schedules",
+      "timezone": "Europe/London",
+      "baseBranch": "main",
+      "inputs": {
+        "LOG_FILE": "SMOKE-LOG.md",
+        "BRANCH_PREFIX": "launch-smoke-test"
+      },
+      "description": "Proves a schedule declared in this repo's tessl.json fires: reads a Linear issue, appends a run marker to SMOKE-LOG.md, and opens a PR."
+    }
+  }
+}

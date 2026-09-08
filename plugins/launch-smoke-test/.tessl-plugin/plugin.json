@@ -1,0 +1,9 @@
+{
+  "name": "tessleng/repo-schedules-smoke-test",
+  "version": "0.1.0",
+  "description": "Repo-local copy of the cloud-launch smoke test, installed by path (file:) rather than from the registry. Reads one Linear issue, appends a run-marker line to SMOKE-LOG.md, and opens a pull request with that one-line change. Its purpose here is to prove a schedule declared in this repo's tessl.json actually fired.",
+  "private": true,
+  "skills": [
+    "SKILL.md"
+  ]
+}

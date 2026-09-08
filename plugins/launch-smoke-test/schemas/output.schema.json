@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "description": "Structured record of the pull request the launch smoke test opened. Composed into the fixed launch-result envelope's `output` property on a cloud launch, so a launch of this skill surfaces the PR under `result.output` and the recipe validates it against this schema.",
+  "properties": {
+    "pr_url": {
+      "type": "string",
+      "description": "URL of the pull request the smoke test opened."
+    },
+    "pr_number": {
+      "type": "integer",
+      "description": "Number of the opened pull request, when the SCM exposes one. Optional (pr_url is the stable identifier)."
+    },
+    "branch": {
+      "type": "string",
+      "description": "The branch the PR was opened from (e.g. `launch-smoke-test/20260709-140501`)."
+    },
+    "issue_identifier": {
+      "type": "string",
+      "description": "The Linear issue the smoke test read (e.g. `AE-669`), tying the PR back to the Linear half of the check."
+    }
+  },
+  "required": ["pr_url", "branch"],
+  "additionalProperties": false
+}
