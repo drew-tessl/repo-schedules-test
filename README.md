@@ -62,3 +62,5 @@ environment and the apply step resolves it per workspace.
 <!-- post-EXP-10177 sync test -->
 
 <!-- resync after tessl-side auth redo -->
+
+<!-- resync after full auth redo -->
