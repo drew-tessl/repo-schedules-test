@@ -58,3 +58,5 @@ environment and the apply step resolves it per workspace.
 <!-- sync trigger -->
 
 <!-- retry sync -->
+
+<!-- post-EXP-10177 sync test -->
