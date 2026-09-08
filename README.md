@@ -68,3 +68,5 @@ environment and the apply step resolves it per workspace.
 <!-- sync test after EXP-10209 flag removal -->
 
 <!-- sync retry, well clear of the rollout -->
+
+<!-- sync retry -->
