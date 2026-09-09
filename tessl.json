@@ -12,6 +12,22 @@
         "BRANCH_PREFIX": "launch-smoke-test"
       },
       "description": "Parked: fires once a year at 09:00 on 1 December so it does not run during testing."
+    },
+    "invalid-cron-check": {
+      "skill": "file:plugins/launch-smoke-test",
+      "environment": "drew-test-env",
+      "timezone": "Europe/London",
+      "baseBranch": "main",
+      "cron": "0 0 30 2 *",
+      "description": "PROD CHECK: 30 February never exists. Must be rejected."
+    },
+    "valid-cron-check": {
+      "skill": "file:plugins/launch-smoke-test",
+      "environment": "drew-test-env",
+      "timezone": "Europe/London",
+      "baseBranch": "main",
+      "cron": "0 9 2 12 *",
+      "description": "PROD CHECK: identical to the invalid one apart from a real date. Must be created."
     }
   }
 }
