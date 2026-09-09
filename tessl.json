@@ -20,6 +20,22 @@
       "baseBranch": "main",
       "cron": "0 9 2 12 *",
       "description": "PROD CHECK: identical to the invalid one apart from a real date. Must be created."
+    },
+    "skill-outside-repo": {
+      "skill": "file:../../../../etc",
+      "cron": "0 9 3 12 *",
+      "environment": "drew-test-env",
+      "timezone": "Europe/London",
+      "baseBranch": "main",
+      "description": "PROD CHECK EXP-10405: path resolves outside the repo. Must be rejected."
+    },
+    "skill-missing-path": {
+      "skill": "file:plugins/does-not-exist",
+      "cron": "0 9 4 12 *",
+      "environment": "drew-test-env",
+      "timezone": "Europe/London",
+      "baseBranch": "main",
+      "description": "PROD CHECK EXP-10405: path does not exist at the pushed commit. Must be rejected."
     }
   }
 }
