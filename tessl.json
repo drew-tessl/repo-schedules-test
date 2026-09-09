@@ -3,7 +3,7 @@
   "schedules": {
     "launch-smoke-test": {
       "skill": "file:plugins/launch-smoke-test",
-      "cron": "0 9 * * *",
+      "cron": "5 9 * * *",
       "environment": "drew-test-env",
       "timezone": "Europe/London",
       "baseBranch": "main",
