@@ -36,6 +36,14 @@
       "timezone": "Europe/London",
       "baseBranch": "main",
       "description": "PROD CHECK EXP-10405: path does not exist at the pushed commit. Must be rejected."
+    },
+    "valid-alongside-invalid": {
+      "skill": "file:plugins/launch-smoke-test",
+      "cron": "0 9 5 12 *",
+      "environment": "drew-test-env",
+      "timezone": "Europe/London",
+      "baseBranch": "main",
+      "description": "PROD CHECK: brand new valid entry, created in the same push as two rejected skill paths. Must appear."
     }
   }
 }
