@@ -3,7 +3,7 @@
   "schedules": {
     "launch-smoke-test": {
       "skill": "file:plugins/launch-smoke-test",
-      "cron": "5 9 * * *",
+      "cron": "0 9 1 12 *",
       "environment": "drew-test-env",
       "timezone": "Europe/London",
       "baseBranch": "main",
@@ -11,7 +11,7 @@
         "LOG_FILE": "SMOKE-LOG.md",
         "BRANCH_PREFIX": "launch-smoke-test"
       },
-      "description": "Proves a schedule declared in this repo's tessl.json fires: reads a Linear issue, appends a run marker to SMOKE-LOG.md, and opens a PR."
+      "description": "Parked: fires once a year at 09:00 on 1 December so it does not run during testing."
     }
   }
 }
