@@ -1,128 +1,180 @@
 {
   "name": "drew-test/repo-schedules-test",
   "schedules": {
-    "valid-02": {
+    "cap-01": {
       "skill": "file:plugins/launch-smoke-test",
       "cron": "0 9 2 12 *",
       "environment": "drew-test-env",
       "timezone": "Europe/London",
-      "description": "QA43 config-only change: description edited, cron untouched."
+      "description": "QA61 cap probe 1 of 25. Cap is 20."
     },
-    "valid-03": {
+    "cap-02": {
+      "skill": "file:plugins/launch-smoke-test",
+      "cron": "0 9 3 12 *",
+      "environment": "drew-test-env",
+      "timezone": "Europe/London",
+      "description": "QA61 cap probe 2 of 25. Cap is 20."
+    },
+    "cap-03": {
+      "skill": "file:plugins/launch-smoke-test",
+      "cron": "0 9 4 12 *",
+      "environment": "drew-test-env",
+      "timezone": "Europe/London",
+      "description": "QA61 cap probe 3 of 25. Cap is 20."
+    },
+    "cap-04": {
+      "skill": "file:plugins/launch-smoke-test",
+      "cron": "0 9 5 12 *",
+      "environment": "drew-test-env",
+      "timezone": "Europe/London",
+      "description": "QA61 cap probe 4 of 25. Cap is 20."
+    },
+    "cap-05": {
+      "skill": "file:plugins/launch-smoke-test",
+      "cron": "0 9 6 12 *",
+      "environment": "drew-test-env",
+      "timezone": "Europe/London",
+      "description": "QA61 cap probe 5 of 25. Cap is 20."
+    },
+    "cap-06": {
+      "skill": "file:plugins/launch-smoke-test",
+      "cron": "0 9 7 12 *",
+      "environment": "drew-test-env",
+      "timezone": "Europe/London",
+      "description": "QA61 cap probe 6 of 25. Cap is 20."
+    },
+    "cap-07": {
+      "skill": "file:plugins/launch-smoke-test",
+      "cron": "0 9 8 12 *",
+      "environment": "drew-test-env",
+      "timezone": "Europe/London",
+      "description": "QA61 cap probe 7 of 25. Cap is 20."
+    },
+    "cap-08": {
+      "skill": "file:plugins/launch-smoke-test",
+      "cron": "0 9 9 12 *",
+      "environment": "drew-test-env",
+      "timezone": "Europe/London",
+      "description": "QA61 cap probe 8 of 25. Cap is 20."
+    },
+    "cap-09": {
+      "skill": "file:plugins/launch-smoke-test",
+      "cron": "0 9 10 12 *",
+      "environment": "drew-test-env",
+      "timezone": "Europe/London",
+      "description": "QA61 cap probe 9 of 25. Cap is 20."
+    },
+    "cap-10": {
+      "skill": "file:plugins/launch-smoke-test",
+      "cron": "0 9 11 12 *",
+      "environment": "drew-test-env",
+      "timezone": "Europe/London",
+      "description": "QA61 cap probe 10 of 25. Cap is 20."
+    },
+    "cap-11": {
+      "skill": "file:plugins/launch-smoke-test",
+      "cron": "0 9 12 12 *",
+      "environment": "drew-test-env",
+      "timezone": "Europe/London",
+      "description": "QA61 cap probe 11 of 25. Cap is 20."
+    },
+    "cap-12": {
       "skill": "file:plugins/launch-smoke-test",
       "cron": "0 9 13 12 *",
       "environment": "drew-test-env",
       "timezone": "Europe/London",
-      "description": "Valid entry 3 of 9. Fires 09:00 on 3 December."
+      "description": "QA61 cap probe 12 of 25. Cap is 20."
     },
-    "invalid-31-april": {
+    "cap-13": {
       "skill": "file:plugins/launch-smoke-test",
-      "cron": "0 9 31 4 *",
+      "cron": "0 9 14 12 *",
       "environment": "drew-test-env",
       "timezone": "Europe/London",
-      "description": "INVALID: 31 April never exists. Must be the only entry skipped."
+      "description": "QA61 cap probe 13 of 25. Cap is 20."
     },
-    "renamed-01": {
+    "cap-14": {
       "skill": "file:plugins/launch-smoke-test",
-      "cron": "0 9 1 12 *",
+      "cron": "0 9 15 12 *",
       "environment": "drew-test-env",
       "timezone": "Europe/London",
-      "description": "Valid entry 1 of 9. Fires 09:00 on 1 December."
+      "description": "QA61 cap probe 14 of 25. Cap is 20."
     },
-    "dup-a": {
+    "cap-15": {
+      "skill": "file:plugins/launch-smoke-test",
+      "cron": "0 9 16 12 *",
+      "environment": "drew-test-env",
+      "timezone": "Europe/London",
+      "description": "QA61 cap probe 15 of 25. Cap is 20."
+    },
+    "cap-16": {
+      "skill": "file:plugins/launch-smoke-test",
+      "cron": "0 9 17 12 *",
+      "environment": "drew-test-env",
+      "timezone": "Europe/London",
+      "description": "QA61 cap probe 16 of 25. Cap is 20."
+    },
+    "cap-17": {
+      "skill": "file:plugins/launch-smoke-test",
+      "cron": "0 9 18 12 *",
+      "environment": "drew-test-env",
+      "timezone": "Europe/London",
+      "description": "QA61 cap probe 17 of 25. Cap is 20."
+    },
+    "cap-18": {
+      "skill": "file:plugins/launch-smoke-test",
+      "cron": "0 9 19 12 *",
+      "environment": "drew-test-env",
+      "timezone": "Europe/London",
+      "description": "QA61 cap probe 18 of 25. Cap is 20."
+    },
+    "cap-19": {
       "skill": "file:plugins/launch-smoke-test",
       "cron": "0 9 20 12 *",
       "environment": "drew-test-env",
       "timezone": "Europe/London",
-      "description": "QA46 duplicate A: identical config to dup-b."
+      "description": "QA61 cap probe 19 of 25. Cap is 20."
     },
-    "dup-b": {
-      "skill": "file:plugins/launch-smoke-test",
-      "cron": "0 9 20 12 *",
-      "environment": "drew-test-env",
-      "timezone": "Europe/London",
-      "description": "QA47 duplicate B: identical config to dup-a."
-    },
-    "env-whitespace": {
+    "cap-20": {
       "skill": "file:plugins/launch-smoke-test",
       "cron": "0 9 21 12 *",
-      "environment": " drew-test-env ",
+      "environment": "drew-test-env",
       "timezone": "Europe/London",
-      "description": "QA48 env name padded with spaces."
+      "description": "QA61 cap probe 20 of 25. Cap is 20."
     },
-    "env-uppercase": {
+    "cap-21": {
       "skill": "file:plugins/launch-smoke-test",
       "cron": "0 9 22 12 *",
-      "environment": "DREW-TEST-ENV",
+      "environment": "drew-test-env",
       "timezone": "Europe/London",
-      "description": "QA49 env name uppercased."
+      "description": "QA61 cap probe 21 of 25. Cap is 20."
     },
-    "workdir-dot": {
+    "cap-22": {
       "skill": "file:plugins/launch-smoke-test",
       "cron": "0 9 23 12 *",
       "environment": "drew-test-env",
       "timezone": "Europe/London",
-      "workdir": ".",
-      "description": "QA50 workdir is the repo root."
+      "description": "QA61 cap probe 22 of 25. Cap is 20."
     },
-    "snapshot-fake-sha": {
+    "cap-23": {
       "skill": "file:plugins/launch-smoke-test",
       "cron": "0 9 24 12 *",
       "environment": "drew-test-env",
       "timezone": "Europe/London",
-      "snapshot": "ffffffffffffffffffffffffffffffffffffffff",
-      "description": "QA51 snapshot pins a SHA that does not exist."
+      "description": "QA61 cap probe 23 of 25. Cap is 20."
     },
-    "missing-base-branch": {
+    "cap-24": {
       "skill": "file:plugins/launch-smoke-test",
       "cron": "0 9 25 12 *",
       "environment": "drew-test-env",
       "timezone": "Europe/London",
-      "baseBranch": "no-such-branch",
-      "description": "QA52 baseBranch does not exist in the repo."
+      "description": "QA61 cap probe 24 of 25. Cap is 20."
     },
-    "six-field-cron": {
+    "cap-25": {
       "skill": "file:plugins/launch-smoke-test",
-      "cron": "0 0 9 26 12 *",
+      "cron": "0 9 26 12 *",
       "environment": "drew-test-env",
       "timezone": "Europe/London",
-      "description": "QA53 six-field cron including a seconds column."
-    },
-    "macro-yearly": {
-      "skill": "file:plugins/launch-smoke-test",
-      "cron": "@yearly",
-      "environment": "drew-test-env",
-      "timezone": "Europe/London",
-      "description": "QA54 the @yearly macro rather than five fields."
-    },
-    "last-day-of-month": {
-      "skill": "file:plugins/launch-smoke-test",
-      "cron": "0 9 L 12 *",
-      "environment": "drew-test-env",
-      "timezone": "Europe/London",
-      "description": "QA55 L means the last day of December."
-    },
-    "named-fields": {
-      "skill": "file:plugins/launch-smoke-test",
-      "cron": "0 9 1 DEC MON",
-      "environment": "drew-test-env",
-      "timezone": "Europe/London",
-      "description": "QA56 named month and weekday; describeCron returns null for these."
-    },
-    "constructor": {
-      "skill": "file:plugins/launch-smoke-test",
-      "cron": "0 9 27 12 *",
-      "environment": "drew-test-env",
-      "timezone": "Europe/London",
-      "description": "QA57 key named constructor."
-    },
-    "empty-strings": {
-      "skill": "file:plugins/launch-smoke-test",
-      "cron": "0 9 28 12 *",
-      "environment": "drew-test-env",
-      "timezone": "Europe/London",
-      "description": "",
-      "instructions": ""
+      "description": "QA61 cap probe 25 of 25. Cap is 20."
     }
   }
 }
