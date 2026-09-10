@@ -17,10 +17,10 @@
     },
     "bad-one": {
       "skill": "file:plugins/launch-smoke-test",
-      "cron": "0 9 30 2 *",
+      "cron": "0 9 7 12 *",
       "environment": "drew-test-env",
       "timezone": "Europe/London",
-      "description": "EXP-10556 BAD 1 of 1. Feb 30 never occurs."
+      "description": "EXP-10556 was-BAD: cron corrected to a real date."
     }
   }
 }
