@@ -1,4 +1,89 @@
 {
   "name": "drew-test/repo-schedules-test",
-  "schedules": {}
+  "schedules": {
+    "rev-ok-01": {
+      "skill": "file:plugins/launch-smoke-test",
+      "cron": "0 9 2 12 *",
+      "environment": "drew-test-env",
+      "timezone": "Europe/London",
+      "description": "EXP-10556 revert retest. Valid entry 1 of 9."
+    },
+    "rev-ok-02": {
+      "skill": "file:plugins/launch-smoke-test",
+      "cron": "0 9 3 12 *",
+      "environment": "drew-test-env",
+      "timezone": "Europe/London",
+      "description": "EXP-10556 revert retest. Valid entry 2 of 9."
+    },
+    "rev-ok-03": {
+      "skill": "file:plugins/launch-smoke-test",
+      "cron": "0 9 4 12 *",
+      "environment": "drew-test-env",
+      "timezone": "Europe/London",
+      "description": "EXP-10556 revert retest. Valid entry 3 of 9."
+    },
+    "rev-ok-04": {
+      "skill": "file:plugins/launch-smoke-test",
+      "cron": "0 9 5 12 *",
+      "environment": "drew-test-env",
+      "timezone": "Europe/London",
+      "description": "EXP-10556 revert retest. Valid entry 4 of 9."
+    },
+    "rev-ok-05": {
+      "skill": "file:plugins/launch-smoke-test",
+      "cron": "0 9 6 12 *",
+      "environment": "drew-test-env",
+      "timezone": "Europe/London",
+      "description": "EXP-10556 revert retest. Valid entry 5 of 9."
+    },
+    "rev-ok-06": {
+      "skill": "file:plugins/launch-smoke-test",
+      "cron": "0 9 7 12 *",
+      "environment": "drew-test-env",
+      "timezone": "Europe/London",
+      "description": "EXP-10556 revert retest. Valid entry 6 of 9."
+    },
+    "rev-ok-07": {
+      "skill": "file:plugins/launch-smoke-test",
+      "cron": "0 9 8 12 *",
+      "environment": "drew-test-env",
+      "timezone": "Europe/London",
+      "description": "EXP-10556 revert retest. Valid entry 7 of 9."
+    },
+    "rev-ok-08": {
+      "skill": "file:plugins/launch-smoke-test",
+      "cron": "0 9 9 12 *",
+      "environment": "drew-test-env",
+      "timezone": "Europe/London",
+      "description": "EXP-10556 revert retest. Valid entry 8 of 9."
+    },
+    "rev-ok-09": {
+      "skill": "file:plugins/launch-smoke-test",
+      "cron": "0 9 10 12 *",
+      "environment": "drew-test-env",
+      "timezone": "Europe/London",
+      "description": "EXP-10556 revert retest. Valid entry 9 of 9."
+    },
+    "rev-bad-cron": {
+      "skill": "file:plugins/launch-smoke-test",
+      "cron": "0 9 30 2 *",
+      "environment": "drew-test-env",
+      "timezone": "Europe/London",
+      "description": "EXP-10556 INVALID 1/3: Feb 30 never occurs."
+    },
+    "rev-bad-field": {
+      "skill": "file:plugins/launch-smoke-test",
+      "cron": "0 9 3 12 *",
+      "environment": "drew-test-env",
+      "timezone": "Europe/London",
+      "description": "EXP-10556 INVALID 2/3: unknown key, trips .strict().",
+      "totallyBogusField": "x"
+    },
+    "rev-bad-missing": {
+      "skill": "file:plugins/launch-smoke-test",
+      "cron": "0 9 4 12 *",
+      "timezone": "Europe/London",
+      "description": "EXP-10556 INVALID 3/3: required 'environment' missing."
+    }
+  }
 }
