@@ -24,9 +24,9 @@ defaults make the skill runnable with no inputs.
 - **`{{DIGEST_FILE}}`** -- repo-relative digest path. Default `docs/linear-digest.md`.
 - **`{{BRANCH_PREFIX}}`** -- branch name prefix. Default `linear-digest`.
 
-The environment must carry **`LINEAR_TOKEN`** (read access to issues) and
-GitHub credentials (`GH_TOKEN` or `GITHUB_TOKEN`) for `gh`. If either is
-missing, stop and report which one. Never print or commit a token.
+The environment must provide the **Linear MCP server** (read access to
+issues) and GitHub credentials (`GH_TOKEN` or `GITHUB_TOKEN`) for `gh`. If
+either is missing, stop and report which one. Never print or commit a token.
 
 ## Procedure
 
@@ -36,24 +36,21 @@ and `gh pr create` authenticate with no setup.
 
 ### 1. Read Linear
 
-Compute the cutoff, then query for issues updated since then:
+Read Linear through the **Linear MCP server**, which this workspace's
+environment registers and the run receives automatically. Do not use a raw API
+token: `LINEAR_TOKEN` is not needed and is currently rejected with a 401.
 
-```bash
-SINCE=$(date -u -v-{{LOOKBACK_DAYS}}d +%Y-%m-%dT%H:%M:%SZ 2>/dev/null \
-  || date -u -d "{{LOOKBACK_DAYS}} days ago" +%Y-%m-%dT%H:%M:%SZ)
+1. List the Linear MCP tools available to you and use those names. Do not
+   assume a fixed prefix.
+2. Find the team matching `{{TEAM_KEY}}`.
+3. List that team's issues updated within the last `{{LOOKBACK_DAYS}}` days,
+   newest first, at most 25.
 
-curl -s https://api.linear.app/graphql \
-  -H "Authorization: $LINEAR_TOKEN" \
-  -H "Content-Type: application/json" \
-  -d "{\"query\":\"query(\$key: String!, \$since: DateTimeOrDuration!) { issues(first: 25, filter: { team: { key: { eq: \$key } }, updatedAt: { gt: \$since } }, orderBy: updatedAt) { nodes { identifier title url updatedAt state { name } } } }\",\"variables\":{\"key\":\"{{TEAM_KEY}}\",\"since\":\"$SINCE\"}}" \
-  > /tmp/linear-digest.json
+Keep each issue's identifier, title, URL, state name, and updated timestamp.
 
-cat /tmp/linear-digest.json
-```
-
-If the response carries a GraphQL `errors` array, stop and report it verbatim.
-An empty `nodes` array is a valid result, not an error: write the digest with a
-line saying nothing changed in the window.
+If no Linear MCP tool is available, stop and report that. An empty result is a
+valid outcome, not an error: write the digest with a line saying nothing
+changed in the window.
 
 ### 2. Write the digest
 
@@ -88,6 +85,7 @@ records the outcome by inspecting the branch and PR you left behind.
 - **Read-only against Linear.** The only write is the digest file in the PR.
 - **Re-running is safe.** Each run overwrites the digest on its own timestamped
   branch, so concurrent runs cannot conflict in the file.
-- **No MCP.** Linear is read over its GraphQL API with `LINEAR_TOKEN`. A
-  schedule defined in `tessl.json` cannot request MCP servers, so a skill on
-  that path must not depend on Linear MCP tools.
+- **MCP comes from the environment.** A scheduled run receives the MCP
+  servers its workspace environment registers; the union happens at run time,
+  so `tessl.json` needs no `mcpServers` field. Read Linear through that proxy
+  rather than a raw token.
