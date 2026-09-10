@@ -28,6 +28,13 @@
       "environment": "drew-test-env",
       "timezone": "Europe/London",
       "description": "Pancakes 3 - VALID"
+    },
+    "linear-triage": {
+      "skill": "file:plugins/development-guide#linear-triage",
+      "cron": "0 9 20 12 *",
+      "environment": "drew-test-env",
+      "timezone": "Europe/London",
+      "description": "Repo-local linear-triage. Far-future cron on purpose; trigger it manually with 'tessl schedule trigger'."
     }
   }
 }
