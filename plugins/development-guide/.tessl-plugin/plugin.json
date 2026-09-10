@@ -1,0 +1,7 @@
+{
+  "name": "tessleng/repo-schedules-development-guide",
+  "version": "1.2.0",
+  "description": "Repo-local copy of the linear-triage skill from tessleng/development-guide@1.2.0, installed by path (file:) rather than from the registry. The registry copy is a private tessleng tile, so a sandbox running in another org cannot resolve it and tessl install fails with a 404.",
+  "private": true,
+  "skills": "./skills/"
+}
