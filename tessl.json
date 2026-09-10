@@ -1,4 +1,26 @@
 {
   "name": "drew-test/repo-schedules-test",
-  "schedules": {}
+  "schedules": {
+    "good-one": {
+      "skill": "file:plugins/launch-smoke-test",
+      "cron": "0 9 5 12 *",
+      "environment": "drew-test-env",
+      "timezone": "Europe/London",
+      "description": "EXP-10556 GOOD 1 of 2. Valid entry."
+    },
+    "good-two": {
+      "skill": "file:plugins/launch-smoke-test",
+      "cron": "0 9 6 12 *",
+      "environment": "drew-test-env",
+      "timezone": "Europe/London",
+      "description": "EXP-10556 GOOD 2 of 2. Valid entry."
+    },
+    "bad-one": {
+      "skill": "file:plugins/launch-smoke-test",
+      "cron": "0 9 30 2 *",
+      "environment": "drew-test-env",
+      "timezone": "Europe/London",
+      "description": "EXP-10556 BAD 1 of 1. Feb 30 never occurs."
+    }
+  }
 }
