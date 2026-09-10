@@ -51,6 +51,13 @@
       "environment": "drew-test-env",
       "timezone": "Europe/London",
       "description": "PROD CHECK EXP-10424: 30 February. Must be skipped without blocking its siblings."
+    },
+    "new-sibling-of-bad-cron": {
+      "skill": "file:plugins/launch-smoke-test",
+      "cron": "0 9 6 12 *",
+      "environment": "drew-test-env",
+      "timezone": "Europe/London",
+      "description": "PROD CHECK EXP-10424 discriminator: brand new, valid, pushed alongside an impossible cron. Pre-fix this would be blocked; post-fix it must be created."
     }
   }
 }
