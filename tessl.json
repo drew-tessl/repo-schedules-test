@@ -15,6 +15,34 @@
       "timezone": "Europe/London",
       "description": "EXP-10556 post-revert sanity: good entry 2 of 2."
     },
-    "malformed-one": "this is not an object at all"
+    "pancakes-1": {
+      "skill": "file:plugins/launch-smoke-test",
+      "cron": "0 9 10 12 *",
+      "environment": "drew-test-env",
+      "timezone": "Europe/London",
+      "description": "Pancakes 1 - VALID"
+    },
+    "pancakes-2": {
+      "skill": "file:plugins/launch-smoke-test",
+      "cron": "0 9 30 2 *",
+      "environment": "drew-test-env",
+      "timezone": "Europe/London",
+      "description": "Pancakes 2 - BROKEN: Feb 30 never occurs"
+    },
+    "pancakes-3": {
+      "skill": "file:plugins/launch-smoke-test",
+      "cron": "0 9 12 12 *",
+      "environment": "drew-test-env",
+      "timezone": "Europe/London",
+      "description": "Pancakes 3 - VALID"
+    },
+    "pancakes-4": {
+      "skill": "file:plugins/launch-smoke-test",
+      "cron": "0 9 13 12 *",
+      "environment": "drew-test-env",
+      "timezone": "Europe/London",
+      "description": "Pancakes 4 - BROKEN: unknown key trips .strict()",
+      "syrup": "maple"
+    }
   }
 }
