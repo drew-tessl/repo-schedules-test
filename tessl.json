@@ -14,6 +14,13 @@
       "environment": "drew-test-env",
       "timezone": "Europe/London",
       "description": "EXP-10556 post-revert sanity: good entry 2 of 2."
+    },
+    "bad-three": {
+      "skill": "file:plugins/launch-smoke-test",
+      "cron": "0 9 31 2 *",
+      "environment": "drew-test-env",
+      "timezone": "Europe/London",
+      "description": "EXP-10556 BAD: Feb 31 never occurs. Must NOT be created."
     }
   }
 }
