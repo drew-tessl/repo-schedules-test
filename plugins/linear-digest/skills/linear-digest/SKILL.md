@@ -24,9 +24,10 @@ defaults make the skill runnable with no inputs.
 - **`{{DIGEST_FILE}}`** -- repo-relative digest path. Default `docs/linear-digest.md`.
 - **`{{BRANCH_PREFIX}}`** -- branch name prefix. Default `linear-digest`.
 
-The environment must provide the **Linear MCP server** (read access to
-issues) and GitHub credentials (`GH_TOKEN` or `GITHUB_TOKEN`) for `gh`. If
-either is missing, stop and report which one. Never print or commit a token.
+The run must provide the agent's `mcp__claude_ai_Linear__*` tools (read
+access to issues) and GitHub credentials (`GH_TOKEN` or `GITHUB_TOKEN`) for
+`gh`. If either is missing, stop and report which one. Never print or commit a
+token.
 
 ## Procedure
 
@@ -36,21 +37,25 @@ and `gh pr create` authenticate with no setup.
 
 ### 1. Read Linear
 
-Read Linear through the **Linear MCP server**, which this workspace's
-environment registers and the run receives automatically. Do not use a raw API
-token: `LINEAR_TOKEN` is not needed and is currently rejected with a 401.
+Read Linear through the agent's own Linear MCP tools, named
+`mcp__claude_ai_Linear__*`. These are available in this sandbox and are what
+the `linear-triage` skill uses successfully.
 
-1. List the Linear MCP tools available to you and use those names. Do not
-   assume a fixed prefix.
-2. Find the team matching `{{TEAM_KEY}}`.
-3. List that team's issues updated within the last `{{LOOKBACK_DAYS}}` days,
-   newest first, at most 25.
+Do **not** use `LINEAR_TOKEN`: it is set to a placeholder in this environment
+and the API rejects it with a 401. Do not rely on `MCP_SERVERS` either; it is
+empty on these runs.
+
+1. `mcp__claude_ai_Linear__list_teams` with a query for `{{TEAM_KEY}}` to find
+   the team.
+2. `mcp__claude_ai_Linear__list_issues` for that team, `limit: 25`, ordered by
+   most recently updated.
+3. Keep only issues updated within the last `{{LOOKBACK_DAYS}}` days.
 
 Keep each issue's identifier, title, URL, state name, and updated timestamp.
 
-If no Linear MCP tool is available, stop and report that. An empty result is a
-valid outcome, not an error: write the digest with a line saying nothing
-changed in the window.
+If no `mcp__claude_ai_Linear__*` tool is available, stop and report that. An
+empty result is a valid outcome, not an error: write the digest with a line
+saying nothing changed in the window.
 
 ### 2. Write the digest
 
@@ -85,7 +90,7 @@ records the outcome by inspecting the branch and PR you left behind.
 - **Read-only against Linear.** The only write is the digest file in the PR.
 - **Re-running is safe.** Each run overwrites the digest on its own timestamped
   branch, so concurrent runs cannot conflict in the file.
-- **MCP comes from the environment.** A scheduled run receives the MCP
-  servers its workspace environment registers; the union happens at run time,
-  so `tessl.json` needs no `mcpServers` field. Read Linear through that proxy
-  rather than a raw token.
+- **Which Linear access works here.** Observed on 2026-09-10: `MCP_SERVERS`
+  is empty on these scheduled runs and `LINEAR_TOKEN` is a placeholder that
+  401s, but the agent's own `mcp__claude_ai_Linear__*` tools do reach Linear.
+  Use those.
