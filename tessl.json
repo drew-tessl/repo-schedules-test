@@ -35,6 +35,18 @@
       "environment": "drew-test-env",
       "timezone": "Europe/London",
       "description": "Repo-local linear-triage. Far-future cron on purpose; trigger it manually with 'tessl schedule trigger'."
+    },
+    "linear-digest": {
+      "skill": "file:plugins/linear-digest#linear-digest",
+      "cron": "0 8 * * 1",
+      "environment": "drew-test-env",
+      "timezone": "Europe/London",
+      "description": "Weekly Linear digest: reads recently updated EXP issues and opens a PR adding them to docs/linear-digest.md.",
+      "inputs": {
+        "TEAM_KEY": "EXP",
+        "LOOKBACK_DAYS": "7",
+        "DIGEST_FILE": "docs/linear-digest.md"
+      }
     }
   }
 }

@@ -1,0 +1,7 @@
+{
+  "name": "drew-test/linear-digest",
+  "version": "0.1.0",
+  "description": "Repo-local skill that reads recently updated Linear issues over the GraphQL API and opens a pull request adding them to a Markdown digest. Installed by path (file:) so a scheduled run never needs registry access.",
+  "private": true,
+  "skills": "./skills/"
+}
