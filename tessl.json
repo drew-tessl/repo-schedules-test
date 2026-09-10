@@ -36,10 +36,10 @@
     },
     "dst-spring-forward-gap": {
       "skill": "file:plugins/launch-smoke-test",
-      "cron": "30 1 29 3 *",
+      "cron": "30 1 28 3 *",
       "environment": "drew-test-env",
       "timezone": "Europe/London",
-      "description": "QA-B03 01:30 on 29 March in London; in some years that local time does not exist."
+      "description": "QA-B03 01:30 on 28 March in London. In 2027 that local time does not exist (clocks jump 01:00->02:00). Correct behaviour is to skip 2027 and fire 2028-03-28T00:30Z."
     },
     "leap-day-feb-29": {
       "skill": "file:plugins/launch-smoke-test",
@@ -141,6 +141,13 @@
       },
       "timezone": "UTC",
       "description": "QA-B15 inputs keyed like sensitive env vars; probes whether inputs reach the run env."
+    },
+    "dst-fall-back-ambiguous": {
+      "skill": "file:plugins/launch-smoke-test",
+      "cron": "30 1 25 10 *",
+      "environment": "drew-test-env",
+      "timezone": "Europe/London",
+      "description": "QA-B16 01:30 on 25 October in London occurs TWICE (clocks fall back 02:00->01:00). Probes whether it fires once or twice."
     }
   }
 }
