@@ -70,3 +70,5 @@ environment and the apply step resolves it per workspace.
 <!-- sync retry, well clear of the rollout -->
 
 <!-- sync retry -->
+
+<!-- QA60: touches README only, never tessl.json -->
