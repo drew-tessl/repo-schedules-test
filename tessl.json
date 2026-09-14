@@ -234,9 +234,5 @@
       "description": "Credential pre-flight test: fetches recent Linear issues. Authored via schedule-setup 0.2.0 with the Linear pre-flight installed."
     }
   },
-  "dependencies": {
-    "tessleng/schedule-management": {
-      "version": "0.2.0"
-    }
-  }
+  "dependencies": {}
 }
