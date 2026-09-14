@@ -5,17 +5,13 @@ description: Diagnostic. Reports the working directory a skill runs in and wheth
 
 # sandbox probe
 
-Run this one command and paste its ENTIRE stdout verbatim as your final answer,
-every line unedited. Do not summarise. Do not edit files. Do not open a PR.
-It prints no secret values, only variable names.
+1. Run this command:
 
 ```bash
-{
-  echo "CWD=$(pwd)"
-  echo "BUNDLED_RELATIVE:"
-  bash scripts/probe.sh 2>&1 | sed 's/^/  /'
-  echo "  exit=$?"
-  echo "SKILL_DIR_LISTING:"; ls -a 2>&1 | sed 's/^/  /'
-  echo "ENV_NAMES_ONLY:"; env | cut -d= -f1 | sort | tr '\n' ' ' | fold -w 160 | sed 's/^/  /'
-} 2>&1
+printf 'CWD=%s | BUNDLED_EXIT=' "$(pwd)"; bash scripts/probe.sh >/dev/null 2>&1; printf '%s | HAS_SCRIPTS_DIR=%s | REPO_ROOT_HAS_SCRIPTS=%s' "$?" "$(test -d scripts && echo yes || echo no)" "$(test -d "$(git rev-parse --show-toplevel)/scripts" && echo yes || echo no)"
 ```
+
+2. Report failure. Set the failure reason to the command's exact stdout, copied
+   verbatim with nothing added or removed. Set the summary to that same text.
+
+Do not edit files. Do not open a PR.
