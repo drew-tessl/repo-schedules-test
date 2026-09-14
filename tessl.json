@@ -1,5 +1,13 @@
 {
   "name": "drew-test/repo-schedules-test",
+  "dependencies": {
+    "drew-test/linear-latest-issues": {
+      "source": "file:plugins/linear-latest-issues"
+    },
+    "drew-test/sandbox-probe": {
+      "source": "file:plugins/sandbox-probe"
+    }
+  },
   "schedules": {
     "linear-triage": {
       "skill": "file:plugins/development-guide#linear-triage",
@@ -74,7 +82,7 @@
       "cron": "0 9 5 12 *",
       "environment": "drew-test-env",
       "timezone": "UTC",
-      "description": "QA-B08 rtl:\u202eoverride\u202c emoji:\ud83e\uddc7\ud83d\udd25 zwj:\ud83d\udc69\u200d\ud83d\udcbb combining:e\u0301\u0301 cjk:\u30c6\u30b9\u30c8 zwsp:a\u200bb"
+      "description": "QA-B08 rtl:‮override‬ emoji:🧇🔥 zwj:👩‍💻 combining:é́ cjk:テスト zwsp:a​b"
     },
     "key-at-exactly-sixty-four-chars-probing-the-upper-length-bound-x": {
       "skill": "file:plugins/launch-smoke-test",
@@ -228,11 +236,10 @@
     },
     "linear-latest-issues": {
       "skill": "file:plugins/linear-latest-issues#linear-latest-issues",
-      "schedule": "daily at 09:00",
+      "cron": "0 9 * * *",
       "environment": "drew-test-env",
       "timezone": "Europe/London",
       "description": "Credential pre-flight test: fetches recent Linear issues. Authored via schedule-setup 0.2.0 with the Linear pre-flight installed."
     }
-  },
-  "dependencies": {}
+  }
 }

@@ -13,7 +13,7 @@ Fetch the most recently updated issues from Linear and write them to
 1. **Credential pre-flight.** Run this before any other work:
 
    ```bash
-   bash scripts/linear.sh "LINEAR_TOKEN"
+   bash "$(git rev-parse --show-toplevel)/plugins/linear-latest-issues/skills/linear-latest-issues/scripts/linear.sh" "LINEAR_TOKEN"
    ```
 
    A non-zero result means Linear rejected the credential. Stop immediately and
