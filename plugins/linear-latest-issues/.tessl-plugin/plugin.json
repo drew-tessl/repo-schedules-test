@@ -1,0 +1,6 @@
+{
+  "name": "local/linear-latest-issues",
+  "version": "0.1.0",
+  "description": "Fetch the most recently updated Linear issues and write them to a report file. Use for a scheduled Linear digest.",
+  "private": true
+}
