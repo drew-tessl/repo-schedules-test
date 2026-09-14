@@ -148,6 +148,83 @@
       "environment": "drew-test-env",
       "timezone": "Europe/London",
       "description": "QA-B16 01:30 on 25 October in London occurs TWICE (clocks fall back 02:00->01:00). Probes whether it fires once or twice."
+    },
+    "cap-fill-01": {
+      "skill": "file:plugins/launch-smoke-test",
+      "cron": "0 9 1 6 *",
+      "environment": "drew-test-env",
+      "timezone": "UTC",
+      "description": "QA-C01 cap-overflow filler 1. Far-future cron; exists to push declared count past the 20 active cap."
+    },
+    "cap-fill-02": {
+      "skill": "file:plugins/launch-smoke-test",
+      "cron": "0 9 2 6 *",
+      "environment": "drew-test-env",
+      "timezone": "UTC",
+      "description": "QA-C02 cap-overflow filler 2. Far-future cron; exists to push declared count past the 20 active cap."
+    },
+    "cap-fill-03": {
+      "skill": "file:plugins/launch-smoke-test",
+      "cron": "0 9 3 6 *",
+      "environment": "drew-test-env",
+      "timezone": "UTC",
+      "description": "QA-C03 cap-overflow filler 3. Far-future cron; exists to push declared count past the 20 active cap."
+    },
+    "cap-fill-04": {
+      "skill": "file:plugins/launch-smoke-test",
+      "cron": "0 9 4 6 *",
+      "environment": "drew-test-env",
+      "timezone": "UTC",
+      "description": "QA-C04 cap-overflow filler 4. Far-future cron; exists to push declared count past the 20 active cap."
+    },
+    "cap-fill-05": {
+      "skill": "file:plugins/launch-smoke-test",
+      "cron": "0 9 5 6 *",
+      "environment": "drew-test-env",
+      "timezone": "UTC",
+      "description": "QA-C05 cap-overflow filler 5. Far-future cron; exists to push declared count past the 20 active cap."
+    },
+    "cap-fill-06": {
+      "skill": "file:plugins/launch-smoke-test",
+      "cron": "0 9 6 6 *",
+      "environment": "drew-test-env",
+      "timezone": "UTC",
+      "description": "QA-C06 cap-overflow filler 6. Far-future cron; exists to push declared count past the 20 active cap."
+    },
+    "cap-fill-07": {
+      "skill": "file:plugins/launch-smoke-test",
+      "cron": "0 9 7 6 *",
+      "environment": "drew-test-env",
+      "timezone": "UTC",
+      "description": "QA-C07 cap-overflow filler 7. Far-future cron; exists to push declared count past the 20 active cap."
+    },
+    "cap-fill-08": {
+      "skill": "file:plugins/launch-smoke-test",
+      "cron": "0 9 8 6 *",
+      "environment": "drew-test-env",
+      "timezone": "UTC",
+      "description": "QA-C08 cap-overflow filler 8. Far-future cron; exists to push declared count past the 20 active cap."
+    },
+    "cap-fill-09": {
+      "skill": "file:plugins/launch-smoke-test",
+      "cron": "0 9 9 6 *",
+      "environment": "drew-test-env",
+      "timezone": "UTC",
+      "description": "QA-C09 cap-overflow filler 9. Far-future cron; exists to push declared count past the 20 active cap."
+    },
+    "cap-fill-10": {
+      "skill": "file:plugins/launch-smoke-test",
+      "cron": "0 9 10 6 *",
+      "environment": "drew-test-env",
+      "timezone": "UTC",
+      "description": "QA-C10 cap-overflow filler 10. Far-future cron; exists to push declared count past the 20 active cap."
+    },
+    "cap-fill-11": {
+      "skill": "file:plugins/launch-smoke-test",
+      "cron": "0 9 11 6 *",
+      "environment": "drew-test-env",
+      "timezone": "UTC",
+      "description": "QA-C11 cap-overflow filler 11. Far-future cron; exists to push declared count past the 20 active cap."
     }
   }
 }
