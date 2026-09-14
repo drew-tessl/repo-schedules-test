@@ -6,6 +6,12 @@
     },
     "drew-test/sandbox-probe": {
       "source": "file:plugins/sandbox-probe"
+    },
+    "drew-test/schedule-management": {
+      "source": "file:plugins/schedule-management"
+    },
+    "drew-test/linear-standup": {
+      "source": "file:plugins/linear-standup"
     }
   },
   "schedules": {
@@ -240,6 +246,13 @@
       "environment": "drew-test-env",
       "timezone": "Europe/London",
       "description": "Credential pre-flight test: fetches recent Linear issues. Authored via schedule-setup 0.2.0 with the Linear pre-flight installed."
+    },
+    "linear-standup": {
+      "skill": "file:plugins/linear-standup#linear-standup",
+      "schedule": "daily at 09:00",
+      "environment": "drew-test-env",
+      "timezone": "Europe/London",
+      "description": "Daily Linear standup: reads recent Linear issues and opens a PR updating docs/linear-standup.md."
     }
   }
 }
