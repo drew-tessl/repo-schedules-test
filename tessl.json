@@ -9,6 +9,9 @@
     },
     "drew-test/linear-standup": {
       "source": "file:plugins/linear-standup"
+    },
+    "drew-test/linear-pulse": {
+      "source": "file:plugins/linear-pulse"
     }
   },
   "schedules": {
@@ -250,6 +253,13 @@
       "environment": "drew-test-env",
       "timezone": "Europe/London",
       "description": "Daily Linear standup: reads recent Linear issues and opens a PR updating docs/linear-standup.md."
+    },
+    "linear-pulse": {
+      "skill": "file:plugins/linear-pulse#linear-pulse",
+      "schedule": "daily at 10:00",
+      "environment": "drew-test-env",
+      "timezone": "Europe/London",
+      "description": "Daily Linear pulse: reads recent Linear issues and opens a PR updating docs/linear-pulse.md."
     }
   }
 }

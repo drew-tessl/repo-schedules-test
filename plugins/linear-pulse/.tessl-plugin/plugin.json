@@ -1,0 +1,6 @@
+{
+  "name": "drew-test/linear-pulse",
+  "version": "0.1.0",
+  "description": "Fetch recent Linear issues and write a pulse report to docs/linear-pulse.md.",
+  "private": true
+}
