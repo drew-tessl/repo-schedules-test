@@ -7,9 +7,6 @@
     "drew-test/sandbox-probe": {
       "source": "file:plugins/sandbox-probe"
     },
-    "drew-test/schedule-management": {
-      "source": "file:plugins/schedule-management"
-    },
     "drew-test/linear-standup": {
       "source": "file:plugins/linear-standup"
     }
@@ -88,7 +85,7 @@
       "cron": "0 9 5 12 *",
       "environment": "drew-test-env",
       "timezone": "UTC",
-      "description": "QA-B08 rtl:‮override‬ emoji:🧇🔥 zwj:👩‍💻 combining:é́ cjk:テスト zwsp:a​b"
+      "description": "QA-B08 rtl:\u202eoverride\u202c emoji:\ud83e\uddc7\ud83d\udd25 zwj:\ud83d\udc69\u200d\ud83d\udcbb combining:e\u0301\u0301 cjk:\u30c6\u30b9\u30c8 zwsp:a\u200bb"
     },
     "key-at-exactly-sixty-four-chars-probing-the-upper-length-bound-x": {
       "skill": "file:plugins/launch-smoke-test",
