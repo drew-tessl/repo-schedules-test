@@ -1,0 +1,7 @@
+{
+  "name": "drew-test/mcp-digests",
+  "version": "0.1.0",
+  "description": "Repo-local skills that read from a workspace MCP server and open a pull request adding what they found to a Markdown digest. Installed by path (file:) so a scheduled run needs no registry access.",
+  "private": true,
+  "skills": "./skills/"
+}
